@@ -1,6 +1,6 @@
 {
-  "name": "vue-material-kit",
-  "author": "Creative Tim https://www.creative-tim.com/",
+  "name": "i8studios.com",
+  "author": "Vu Hoang Tuan",
   "description": "I8Studios.com",
   "version": "1.2.2",
   "private": true,
@@ -30,6 +30,7 @@
     "@vue/cli-service": "4.1.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.0.3",
+    "css-loader": "^3.5.3",
     "eslint": "6.7.2",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-vue": "6.0.1",
@@ -39,6 +40,7 @@
     "sass": "1.23.7",
     "sass-loader": "8.0.0",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
     "vue-template-compiler": "2.6.10"
   }
 }

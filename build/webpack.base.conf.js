@@ -12,7 +12,10 @@ const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
+  include: [
+      resolve('src'), resolve('test'),
+      path.resolve(__dirname, 'src', 'scss')
+],
   options: {
     formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
@@ -52,7 +55,7 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
@@ -60,8 +63,12 @@ module.exports = {
         }
       },
       {
-        test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader'
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.jpe?g|png|gif|woff|woff2|eot|ttf|svg(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000'
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,

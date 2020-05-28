@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-
+import MaterialKit from "./plugins/material-kit";
 
 Vue.config.productionTip = false;
 
