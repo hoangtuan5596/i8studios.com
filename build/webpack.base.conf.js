@@ -60,6 +60,10 @@ module.exports = {
         }
       },
       {
+        test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader'
+      },
+      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {

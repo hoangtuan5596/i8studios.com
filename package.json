@@ -1,25 +1,18 @@
 {
-  "name": "i8studios.com",
-  "version": "1.0.0",
-  "description": "Design by Hoang Tuan",
-  "author": "Vu Hoang Tuan - +84905158925",
+  "name": "vue-material-kit",
+  "author": "Creative Tim https://www.creative-tim.com/",
+  "description": "I8Studios.com",
+  "version": "1.2.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build && gulp licenses",
     "lint": "vue-cli-service lint",
-    "dev": "npm run serve"
+    "dev": "npm run serve",
+    "install:clean": "npm install && npm run dev"
   },
   "dependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
     "core-js": "3.5.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": "^2.20.2",
     "nouislider": "14.1.0",
     "v-tooltip": "2.0.2",
     "vue": "2.6.10",
@@ -37,7 +30,7 @@
     "@vue/cli-service": "4.1.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.0.3",
-    "eslint-loader": "2.1.2",
+    "eslint": "6.7.2",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-vue": "6.0.1",
     "gulp": "4.0.2",
@@ -45,6 +38,7 @@
     "prettier": "1.19.1",
     "sass": "1.23.7",
     "sass-loader": "8.0.0",
+    "style-loader": "^1.2.1",
     "vue-template-compiler": "2.6.10"
   }
 }

@@ -10,7 +10,7 @@
             <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
             <div class="brand">
               <h1>I8Studios.com</h1>
-              <h3>A Badass Vue.js UI Kit made with Material Design.</h3>
+              <h3>Design</h3>
             </div>
           </div>
         </div>
@@ -65,12 +65,9 @@
             <div
               class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
             >
-              <h2>Completed with examples</h2>
+              <h2></h2>
               <h4>
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. More importantly, looking at them will give you a picture of
-                what you can built with this powerful kit.
+              
               </h4>
             </div>
           </div>
@@ -267,10 +264,27 @@
 </template>
 
 <script>
-
+import { LoginCard } from '@/components';
+import BasicElements from './components/BasicElementsSection';
+import Navigation from './components/NavigationSection';
+import SmallNavigation from './components/SmallNavigationSection';
+import Tabs from './components/TabsSection';
+import NavPills from './components/NavPillsSection';
+import Notifications from './components/NotificationsSection';
+import TypographyImages from './components/TypographyImagesSection';
+import JavascriptComponents from './components/JavascriptComponentsSection';
 
 export default {
   components: {
+    BasicElements,
+    Navigation,
+    SmallNavigation,
+    Tabs,
+    NavPills,
+    Notifications,
+    TypographyImages,
+    JavascriptComponents,
+    LoginCard,
   },
   name: 'index',
   bodyClass: 'index-page',
