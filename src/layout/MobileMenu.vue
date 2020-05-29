@@ -9,12 +9,12 @@
 
 <script>
 export default {
-  name: 'mobile-menu',
+  name: "mobile-menu",
   props: {
     navMobileSectionStart: {
       type: String,
-      default: 'false',
-    },
-  },
+      default: "false"
+    }
+  }
 };
 </script>

@@ -8,7 +8,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">I8Studios.com</h3>
+        <img href="#" id="home" src="@/assets/logo.png">
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -20,7 +20,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </md-button>
-
         <div class="md-collapse">
           <div class="md-collapse-wrapper">
             <mobile-menu nav-mobile-section-start="false">
@@ -49,30 +48,33 @@
                             <p>All Components</p>
                           </a>
                         </li>
-                        <li>
-                          <a
-                            href=""
-                          >
-                            <i class="material-icons">content_paste</i>
-                            <p>Documentation</p>
-                          </a>
-                        </li>
                       </ul>
                     </drop-down>
                   </div>
                 </a>
               </li>
-
               <md-list-item
-                href=""
-                target="_blank"
-                v-if="showDownload"
+               href="#/service"  
+               target="_blank"
+              >
+                <i class="material-icons">design_services</i>
+                <p>Service</p>
+              </md-list-item> 
+              <md-list-item
+               href="#/service"  
+               target="_blank"
+              >
+                <i class="material-icons">work</i>
+                <p>Works</p>
+              </md-list-item>
+               <md-list-item
+               href="#/about"  
+               target="_blank"
               >
                 <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
+                <p>About Us</p>
               </md-list-item>
-
-              <md-list-item
+              <!-- <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
                 v-if="showDownload"
@@ -119,16 +121,15 @@
                     </drop-down>
                   </div>
                 </a>
-              </li>
-
+              </li> -->
               <md-list-item
-                href="https://www.facebook.com/i8Studios.com"
+                href="#/contanct"
                 target="_blank"
               >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
+                <i class="material-icons">contacts</i>
+                <p>Contact</p>
                 <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
+                  >Contact with us</md-tooltip
                 >
               </md-list-item>
             </md-list>
@@ -140,7 +141,7 @@
 </template>
 
 <script>
-import MobileMenu from '@/layout/MobileMenu';
+import MobileMenu from "@/layout/MobileMenu";
 
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
@@ -156,53 +157,54 @@ function resizeThrottler(actualResizeHandler) {
 }
 export default {
   components: {
-    MobileMenu,
+    MobileMenu
   },
   props: {
     type: {
       type: String,
-      default: 'white',
+      default: "black",
       validator(value) {
         return [
-          'white',
-          'default',
-          'primary',
-          'danger',
-          'success',
-          'warning',
-          'info',
+          "black",
+          "default",
+          "primary",
+          "danger",
+          "success",
+          "warning",
+          "info"
         ].includes(value);
-      },
+      }
     },
     colorOnScroll: {
       type: Number,
-      default: 0,
-    },
+      default: 0
+    }
   },
   data() {
     return {
-      extraNavClasses: '',
-      toggledClass: false,
+      extraNavClasses: "",
+      toggledClass: false
     };
   },
   computed: {
     showDownload() {
-      const excludedRoutes = ['login', 'landing', 'profile'];
-      return excludedRoutes.every((r) => r !== this.$route.name);
-    },
+      const excludedRoutes = ["login", "landing", "profile"];
+      return excludedRoutes.every(r => r !== this.$route.name);
+    }
   },
   methods: {
+
     bodyClick() {
-      const bodyClick = document.getElementById('bodyClick');
+      const bodyClick = document.getElementById("bodyClick");
 
       if (bodyClick === null) {
-        const body = document.querySelector('body');
-        const elem = document.createElement('div');
-        elem.setAttribute('id', 'bodyClick');
+        const body = document.querySelector("body");
+        const elem = document.createElement("div");
+        elem.setAttribute("id", "bodyClick");
         body.appendChild(elem);
 
-        const bodyClick = document.getElementById('bodyClick');
-        bodyClick.addEventListener('click', this.toggleNavbarMobile);
+        const bodyClick = document.getElementById("bodyClick");
+        bodyClick.addEventListener("click", this.toggleNavbarMobile);
       } else {
         bodyClick.remove();
       }
@@ -213,32 +215,38 @@ export default {
       this.bodyClick();
     },
     handleScroll() {
-      const scrollValue = document.body.scrollTop || document.documentElement.scrollTop;
-      const navbarColor = document.getElementById('toolbar');
+      const scrollValue =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const navbarColor = document.getElementById("toolbar");
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
         this.extraNavClasses = `md-${this.type}`;
-        navbarColor.classList.remove('md-transparent');
+        navbarColor.classList.remove("md-transparent");
       } else if (this.extraNavClasses) {
-        this.extraNavClasses = '';
-        navbarColor.classList.add('md-transparent');
+        this.extraNavClasses = "";
+        navbarColor.classList.add("md-transparent");
       }
     },
     scrollListener() {
       resizeThrottler(this.handleScroll);
     },
-    scrollToElement() {
-      const element_id = document.getElementById('downloadSection');
-      if (element_id) {
-        element_id.scrollIntoView({ block: 'end', behavior: 'smooth' });
-      }
-    },
+    // scrollToElement() {
+    //   const element_id = document.getElementById("downloadSection");
+    //   if (element_id) {
+    //     element_id.scrollIntoView({ block: "end", behavior: "smooth" });
+    //   }
+    // }
   },
   mounted() {
-    document.addEventListener('scroll', this.scrollListener);
+    document.addEventListener("scroll", this.scrollListener);
   },
   beforeDestroy() {
-    document.removeEventListener('scroll', this.scrollListener);
-  },
+    document.removeEventListener("scroll", this.scrollListener);
+  }
 };
 </script>
+<style>
+#toolbar.md-toolbar.md-transparent.md-absolute.md-theme-default.md-elevation-0{
+  background-color: black !important;
+}
+</style>

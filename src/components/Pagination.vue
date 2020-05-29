@@ -30,39 +30,40 @@
 </template>
 <script>
 export default {
-  name: 'pagination',
+  name: "pagination",
   props: {
     type: {
       type: String,
-      default: 'primary',
-      validator: (value) => [
-        'default',
-        'primary',
-        'danger',
-        'success',
-        'warning',
-        'info',
-        'rose',
-      ].includes(value),
+      default: "primary",
+      validator: value =>
+        [
+          "default",
+          "primary",
+          "danger",
+          "success",
+          "warning",
+          "info",
+          "rose"
+        ].includes(value)
     },
     withText: Boolean,
     noArrows: Boolean,
     pageCount: {
       type: Number,
-      default: 0,
+      default: 0
     },
     perPage: {
       type: Number,
-      default: 10,
+      default: 10
     },
     total: {
       type: Number,
-      default: 0,
+      default: 0
     },
     value: {
       type: Number,
-      default: 1,
-    },
+      default: 1
+    }
   },
   computed: {
     paginationClass() {
@@ -102,11 +103,11 @@ export default {
         return this.totalPages;
       }
       return this.pagesToDisplay;
-    },
+    }
   },
   data() {
     return {
-      defaultPagesToDisplay: 5,
+      defaultPagesToDisplay: 5
     };
   },
   methods: {
@@ -118,26 +119,26 @@ export default {
       return arr;
     },
     changePage(item) {
-      this.$emit('input', item);
+      this.$emit("input", item);
     },
     nextPage() {
       if (this.value < this.totalPages) {
-        this.$emit('input', this.value + 1);
+        this.$emit("input", this.value + 1);
       }
     },
     prevPage() {
       if (this.value > 1) {
-        this.$emit('input', this.value - 1);
+        this.$emit("input", this.value - 1);
       }
-    },
+    }
   },
   watch: {
     perPage() {
-      this.$emit('input', 1);
+      this.$emit("input", 1);
     },
     total() {
-      this.$emit('input', 1);
-    },
-  },
+      this.$emit("input", 1);
+    }
+  }
 };
 </script>

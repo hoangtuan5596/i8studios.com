@@ -201,8 +201,8 @@
 export default {
   data() {
     return {
-      image: require('@/assets/img/faces/avatar.jpg'),
-      responsive: false,
+      image: require("@/assets/img/faces/avatar.jpg"),
+      responsive: false
     };
   },
   methods: {
@@ -212,15 +212,15 @@ export default {
       } else {
         this.responsive = false;
       }
-    },
+    }
   },
   mounted() {
     this.onResponsiveInverted();
-    window.addEventListener('resize', this.onResponsiveInverted);
+    window.addEventListener("resize", this.onResponsiveInverted);
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.onResponsiveInverted);
-  },
+    window.removeEventListener("resize", this.onResponsiveInverted);
+  }
 };
 </script>
 

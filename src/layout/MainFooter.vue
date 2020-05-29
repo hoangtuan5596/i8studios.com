@@ -8,31 +8,34 @@
       <nav>
         <ul>
           <li>
-            <a href="https://www.i8studios.com">
-              Creative Tim
-            </a>
+          <md-list-item
+                href="https://www.facebook.com/i8studio"
+                target="_blank"
+              >
+                <i class="fab fa-instagram"></i>
+                <p>Instagram</p>
+                <md-tooltip md-direction="bottom"
+                  >Follow Us on Instagram</md-tooltip
+                >
+            </md-list-item>
           </li>
           <li>
-            <a href="https:///presentation.i8studios.com">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="https:///blog.i8studios.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.i8studios.com/license">
-              Licenses
-            </a>
+            <md-list-item
+              href="https://www.facebook.com/i8studio"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-square"></i>
+              <p>Facebook</p>
+              <md-tooltip md-direction="bottom"
+                >Like us on Facebook</md-tooltip
+              >
+            </md-list-item>
           </li>
         </ul>
       </nav>
       <div class="copyright">
-        &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
+        &copy; {{ year }}
         <a href="https://www.i8studios.com/" target="_blank">i8 Studios</a>
-        for a better web.
       </div>
     </div>
   </footer>
@@ -45,9 +48,10 @@ export default {
   },
   data() {
     return {
-      year: new Date().getFullYear(),
+      year: new Date().getFullYear()
     };
-  },
+  }
 };
 </script>
-<style></style>
+<style>
+</style>

@@ -53,12 +53,12 @@ export default {
     tabIcon: Array,
     colorButton: {
       type: String,
-      default: '',
-    },
+      default: ""
+    }
   },
   data() {
     return {
-      activePanel: this.tabName[0],
+      activePanel: this.tabName[0]
     };
   },
   methods: {
@@ -73,8 +73,8 @@ export default {
     },
     getTabContent(index) {
       return `tab-pane-${index}`;
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -23,22 +23,22 @@
 </template>
 <script>
 export default {
-  name: 'drop-down',
+  name: "drop-down",
   props: {
     direction: {
       type: String,
-      default: 'down',
+      default: "down"
     },
     multiLevel: {
       type: Boolean,
-      default: false,
+      default: false
     },
     title: String,
-    icon: String,
+    icon: String
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: false
     };
   },
   methods: {
@@ -51,7 +51,7 @@ export default {
     },
     closeDropDown() {
       this.isOpen = false;
-    },
-  },
+    }
+  }
 };
 </script>

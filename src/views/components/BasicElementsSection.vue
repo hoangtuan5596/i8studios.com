@@ -244,14 +244,13 @@
 </template>
 
 <script>
-import { Pagination, Slider, Badge } from '@/components';
-
+import { Pagination, Slider, Badge } from "@/components";
 
 export default {
   components: {
     Pagination,
     Slider,
-    Badge,
+    Badge
   },
   data() {
     return {
@@ -276,10 +275,10 @@ export default {
       buffer: 40,
       sliders: {
         simple: 40,
-        rangeSlider: [20, 60],
-      },
+        rangeSlider: [20, 60]
+      }
     };
-  },
+  }
 };
 </script>
 

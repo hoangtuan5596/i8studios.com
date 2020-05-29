@@ -6,7 +6,7 @@
 <script>
 function debounce(func, wait, immediate) {
   let timeout;
-  return function () {
+  return function() {
     const context = this;
     const args = arguments;
     clearTimeout(timeout);
@@ -18,36 +18,36 @@ function debounce(func, wait, immediate) {
   };
 }
 export default {
-  name: 'parallax',
+  name: "parallax",
   data() {
     return {
       styles: {},
-      debounceTimeout: 6,
+      debounceTimeout: 6
     };
   },
   methods: {
     handleScroll(scrollVal) {
       const oVal = scrollVal / 3;
       this.styles = {
-        transform: `translate3d(0, ${oVal}px,0)`,
+        transform: `translate3d(0, ${oVal}px,0)`
       };
     },
     checkForParallax(scrollVal) {
       const fn = debounce(
         () => this.handleScroll(scrollVal),
-        this.debounceTimeout,
+        this.debounceTimeout
       );
       fn();
-    },
+    }
   },
   mounted() {
     const self = this;
-    window.addEventListener('scroll', function () {
+    window.addEventListener("scroll", function() {
       if (window.innerWidth > 991) {
         const scrollVal = this.scrollY;
         self.checkForParallax(scrollVal);
       }
     });
-  },
+  }
 };
 </script>

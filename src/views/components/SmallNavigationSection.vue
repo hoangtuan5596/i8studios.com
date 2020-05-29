@@ -179,7 +179,7 @@
 export default {
   data() {
     return {
-      responsive: false,
+      responsive: false
     };
   },
   methods: {
@@ -189,15 +189,15 @@ export default {
       } else {
         this.responsive = false;
       }
-    },
+    }
   },
   mounted() {
     this.onResponsiveInverted();
-    window.addEventListener('resize', this.onResponsiveInverted);
+    window.addEventListener("resize", this.onResponsiveInverted);
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.onResponsiveInverted);
-  },
+    window.removeEventListener("resize", this.onResponsiveInverted);
+  }
 };
 </script>
 

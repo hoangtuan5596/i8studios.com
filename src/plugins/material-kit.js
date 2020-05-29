@@ -1,12 +1,12 @@
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.min.css';
-import '@/assets/scss/material-kit.scss';
-import '@/assets/demo.css';
-import VueLazyload from 'vue-lazyload';
-import VueCarousel from 'vue-carousel';
-import globalDirectives from './globalDirectives';
-import globalMixins from './globalMixins';
-import globalComponents from './globalComponents';
+import VueMaterial from "vue-material";
+import "vue-material/dist/vue-material.min.css";
+import "@/assets/scss/material-kit.scss";
+import "@/assets/demo.css";
+import VueLazyload from "vue-lazyload";
+import VueCarousel from "vue-carousel";
+import globalDirectives from "./globalDirectives";
+import globalMixins from "./globalMixins";
+import globalComponents from "./globalComponents";
 
 export default {
   install(Vue) {
@@ -19,9 +19,9 @@ export default {
       observer: true,
       // optional
       observerOptions: {
-        rootMargin: '0px',
-        threshold: 0.1,
-      },
+        rootMargin: "0px",
+        threshold: 0.1
+      }
     });
-  },
+  }
 };
